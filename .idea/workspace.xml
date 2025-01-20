@@ -5,73 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd11cdc8-4f8f-4211-9bd6-6e3e99378514" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/s-test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/profiles/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/check-completeness.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/choice-employee.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/student-document-details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/students.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/exam.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/s-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/s-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/exams/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/exams/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/result_list.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 10.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 11.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 12.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 13.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 14.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 15.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 16.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 17.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 18.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 19.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 20.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 1.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 10.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 11.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 12.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 13.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 14.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 15.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 16.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 17.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 18.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 19.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 2.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 20.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 3.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 4.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 5.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 6.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 7.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 8.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 9.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/media/3x4/64186434045.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/media/3x4/84c0791cc2527883205be8b060d2829f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/media/3x4/WIN_20250114_10_32_36_Pro.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/media/3x4/img_AAMTbOT.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/media/log/61X32p4wY2GqsnLn7rS1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/profiles/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/profiles/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/profiles/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/profiles/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/exams/base-exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/exams/base-exam.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/profiles/employee-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/employee-base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/templates/profiles/operator-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/operator-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/imagefile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/img.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/operator-add-exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/operator-add-exam.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,15 +42,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/www/Desktop/s-test"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/www/Desktop/railexam.uz&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\www\Desktop\s-test\project\files\documents" />

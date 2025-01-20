@@ -7,7 +7,7 @@ from django.utils import timezone
 from docxtpl import DocxTemplate, InlineImage
 from docx.shared import Cm
 from docx2pdf import convert
-import pythoncom
+# import pythoncom
 
 from django.db.models import Count, Q, F
 from django.conf import settings
@@ -119,7 +119,7 @@ def exam_result_pdf_view(request, unique_id):
 
         doc.save(word_path)
 
-        pythoncom.CoInitializeEx(0)
+        # pythoncom.CoInitializeEx(0)
         convert(word_path, pdf_path)
 
         exam.pdf_short_path = pdf_short_path
