@@ -1,0 +1,187 @@
+{% extends 'profiles/operator-base.html' %}
+{% load static %}
+{% block head %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="viho admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+          content="admin template, viho admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="{% static 'assets/images/favicon.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" type="image/x-icon">
+    <title>viho - Premium Admin Template</title>
+    <!-- Google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+          rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/fontawesome.css' %}">
+    <!-- ico-font-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/icofont.css' %}">
+    <!-- Themify icon-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/themify.css' %}">
+    <!-- Flag icon-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/flag-icon.css' %}">
+    <!-- Feather icon-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/feather-icon.css' %}">
+    <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/datatables.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/owlcarousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/rating.css' %}">
+    <!-- Plugins css Ends-->
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.css' %}">
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+    <link id="color" rel="stylesheet" href="{% static 'assets/css/color-1.css' %}" media="screen">
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/responsive.css' %}">
+{% endblock %}
+
+
+{% block body %}
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Imtihonlar ro'yxati</h3>
+                    <!--                    <ol class="breadcrumb">-->
+                    <!--                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>-->
+                    <!--                        <li class="breadcrumb-item">Pages</li>-->
+                    <!--                        <li class="breadcrumb-item">ECommerce</li>-->
+                    <!--                        <li class="breadcrumb-item active">Product list</li>-->
+                    <!--                    </ol>-->
+                </div>
+                {% for msg in messages %}
+                <div class="alert alert-success dark alert-dismissible fade show" role="alert">
+                    <p><i data-feather="check-square"></i><b style="font-size: 16px; padding-left: 15px;">{{ msg }}</b></p>
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+                <div class="col-sm-6">
+                    <!-- Bookmark Start-->
+                    <div class="bookmark">
+                        <!--                        <ul>-->
+                        <!--                            <li><a href="javascript:void(0)" data-container="body" data-bs-toggle="popover"-->
+                        <!--                                   data-placement="top" title="" data-original-title="Tables"><i-->
+                        <!--                                    data-feather="inbox"></i></a></li>-->
+                        <!--                            <li><a href="javascript:void(0)" data-container="body" data-bs-toggle="popover"-->
+                        <!--                                   data-placement="top" title="" data-original-title="Chat"><i-->
+                        <!--                                    data-feather="message-square"></i></a></li>-->
+                        <!--                            <li><a href="javascript:void(0)" data-container="body" data-bs-toggle="popover"-->
+                        <!--                                   data-placement="top" title="" data-original-title="Icons"><i-->
+                        <!--                                    data-feather="command"></i></a></li>-->
+                        <!--                            <li><a href="javascript:void(0)" data-container="body" data-bs-toggle="popover"-->
+                        <!--                                   data-placement="top" title="" data-original-title="Learning"><i-->
+                        <!--                                    data-feather="layers"></i></a></li>-->
+                        <!--                            <li><a href="javascript:void(0)"><i class="bookmark-search" data-feather="star"></i></a>-->
+                        <!--                                <form class="form-inline search-form">-->
+                        <!--                                    <div class="form-group form-control-search">-->
+                        <!--                                        <input type="text" placeholder="Search..">-->
+                        <!--                                    </div>-->
+                        <!--                                </form>-->
+                        <!--                            </li>-->
+                        <!--                        </ul>-->
+                    </div>
+                    <!-- Bookmark Ends-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid starts-->
+    <div class="container-fluid list-products">
+        <div class="row">
+            <!-- Individual column searching (text inputs) Starts-->
+            <div class="col-sm-12">
+                <div class="card">
+<!--                    <div class="card-header pb-0">-->
+<!--                        <h5>Individual column searching (text inputs) </h5><span>The searching functionality provided by DataTables is useful for quickly search through the information in the table - however the search is global, and you may wish to present controls that search on specific columns.</span>-->
+<!--                    </div>-->
+                    <div class="card-body">
+                        <div class="table-responsive product-table">
+                            <table class="display" id="basic-1">
+                                <thead>
+                                <tr>
+                                    <th style="padding: 0px; text-align: center;">#</th>
+                                    <th style="padding: 0px; text-align: center;">Imtihon №</th>
+                                    <th>Topshiruvchi</th>
+                                    <th>Test kategoriyasi</th>
+                                    <th>Holati</th>
+                                    <th>Vaqti</th>
+                                    <th>Amallar</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for exam in exams %}
+                                    <tr>
+                                        <td>
+                                            {{ forloop.counter }}
+                                        </td>
+                                        <td style="text-align: center;">
+                                            {{ exam.id }}
+                                        </td>
+                                        <td><a href="product-page.html">
+                                            <h6> {{ exam.employee.fullname }} </h6></a><span>{{ exam.employee.position }}</span>
+                                        </td>
+                                        <td>{{ exam.category.name }}</td>
+                                        {% if exam.ended %}
+                                        <td class="font-success">Tugatilgan</td>
+                                        {% else %}
+                                        <td class="font-primary">Jarayonda</td>
+                                        {% endif %}
+                                        <td>{{ exam.started|date:"d.m.Y H:i"|default:'Boshlanmadi' }} <br> {{ exam.ended|date:"d.m.Y H:i"|default:'Tugatilmadi' }}</td>
+                                        <td>
+                                            {% if exam.pdf_short_path %}
+                                            <a href="{% url 'exams:exam_result_pdf' exam.unique_id %}">
+                                                <button class="btn btn-primary btn-xs" type="button"
+                                                    data-original-title="btn btn-danger btn-xs" title="">Natijani ko'rish
+                                                </button>
+                                            </a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Individual column searching (text inputs) Ends-->
+        </div>
+    </div>
+    <!-- Container-fluid Ends-->
+</div>
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+<!-- feather icon js-->
+<script src="{% static 'assets/js/icons/feather-icon/feather.min.js' %}"></script>
+<script src="{% static 'assets/js/icons/feather-icon/feather-icon.js' %}"></script>
+<!-- Sidebar jquery-->
+<script src="{% static 'assets/js/sidebar-menu.js' %}"></script>
+<script src="{% static 'assets/js/config.js' %}"></script>
+<!-- Bootstrap js-->
+<script src="{% static 'assets/js/bootstrap/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap/bootstrap.min.js' %}"></script>
+<!-- Plugins JS start-->
+<script src="{% static 'assets/js/datatable/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/js/rating/jquery.barrating.js' %}"></script>
+<script src="{% static 'assets/js/rating/rating-script.js' %}"></script>
+<script src="{% static 'assets/js/owlcarousel/owl.carousel.js' %}"></script>
+<script src="{% static 'assets/js/ecommerce.js' %}"></script>
+<script src="{% static 'assets/js/product-list-custom.js' %}"></script>
+<!-- Plugins JS Ends-->
+<!-- Theme js-->
+<script src="{% static 'assets/js/script.js' %}"></script>
+<script src="{% static 'assets/js/theme-customizer/customizer.js' %}"></script>
+{% endblock %}

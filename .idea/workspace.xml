@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cd11cdc8-4f8f-4211-9bd6-6e3e99378514" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/s-test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/profiles/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/check-completeness.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/choice-employee.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/student-document-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/students.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/exam.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/project/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/exams/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/exams/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/result_list.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 10.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 11.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 12.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 13.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 14.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 15.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 16.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 17.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 18.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 19.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 20.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 6.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 8.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/pdf/EXAM RESULT № 9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 10.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 11.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 12.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 13.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 14.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 15.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 16.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 17.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 18.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 19.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 20.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 4.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 5.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 6.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 7.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 8.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/files/results/word/EXAM RESULT № 9.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/media/3x4/64186434045.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/media/3x4/84c0791cc2527883205be8b060d2829f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/media/3x4/WIN_20250114_10_32_36_Pro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/media/3x4/img_AAMTbOT.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/media/log/61X32p4wY2GqsnLn7rS1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/profiles/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/profiles/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/profiles/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/profiles/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/exams/base-exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/exams/base-exam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/employee-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/employee-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/operator-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/operator-base.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2reRn3Ni9U2vtVkETN6PiUIO9fO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/www/Desktop/s-test"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\www\Desktop\s-test\project\files\documents" />
+      <recent name="C:\Users\www\Desktop\s-test\project\templates\profiles\kadr" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\www\Desktop\s-test\project\files\documents" />
+      <recent name="C:\Users\www\Desktop\s-test\project" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd11cdc8-4f8f-4211-9bd6-6e3e99378514" name="Changes" comment="" />
+      <created>1736917718982</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736917718982</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/project/profiles/views.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

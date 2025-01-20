@@ -1,0 +1,135 @@
+{% extends 'profiles/operator-base.html' %}
+
+{% block body %}
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 style="text-transform: none;">TEST QO'SHISH</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/profiles/operator/main/">Asosiy</a></li>
+                        <li class="breadcrumb-item"><a href="/profiles/operator/tests/">Testlar</a></li>
+                        <li class="breadcrumb-item">Test qo'shish</li>
+                    </ol>
+                </div>
+                <div class="col-sm-6">
+                    <div class="bookmark">
+                        <ul>
+                            <li>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                                        data-original-title="test" data-bs-target="#newCategoryModal">Kategoriya qo'shish</button>
+                                <div class="modal fade" id="newCategoryModal" tabindex="-1" role="dialog" aria-labelledby="newCategoryModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <form action="{% url 'profiles:operator_add_category' %}" method="post">
+                                                {% csrf_token %}
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="newCategoryModalLabel">Yangi kategoriya nomini kiriting</h5>
+                                                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <input class="form-control" type="text" name="new_category_name" required>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" type="submit">Saqlash</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--                                <a href="{% url 'profiles:operator_add_test' %}" data-container="body" data-bs-toggle="popover" style="padding-right: 10px;"-->
+                                <!--                                   data-placement="top" title="" data-original-title="addTest"><i data-feather="plus-square"></i>Kategoriya qo'shish</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+
+                {% for msg in messages %}
+                <div class="alert alert-success dark alert-dismissible fade show" role="alert"
+                     style="margin-top: 15px;">
+                    <p><i data-feather="check-square"></i><b style="font-size: 16px; padding-left: 15px;">{{ msg }}</b>
+                    </p>
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h5 style="text-transform: none;">Yangi test qo'shish</h5>
+                    </div>
+                    <form action="{% url 'profiles:operator_add_test' %}" method="post" class="form theme-form">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Kategoriya</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="category_id" id="testCategory" required>
+                                                {% for category in categories %}
+                                                <option value="{{category.id}}">{{ category.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Savol matni</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="question" rows="3" cols="5"
+                                                      required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">To'g'ri
+                                            javob</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="correct_option" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Variant 1</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="option1" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Variant 2</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="option2" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Variant 3</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="option3" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="col-sm-9 offset-sm-3" style="margin-left: 0;">
+                                <button class="btn btn-primary" type="submit">Saqlash</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid Ends-->
+</div>
+{% endblock %}

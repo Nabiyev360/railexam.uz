@@ -1,0 +1,131 @@
+{% extends 'profiles/kadr/base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h3 style="text-transform: none;">{{ employee.fullname }}ning hujjatlari</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Asosiy</a></li>
+                        <li class="breadcrumb-item"><a href="#">Xodim hujjatlari</a></li>
+                        <li class="breadcrumb-item">{{ employee.fullname }}</li>
+                    </ol>
+                </div>
+
+                {% for msg in messages %}
+                <div class="alert alert-success dark alert-dismissible fade show" role="alert"
+                     style="margin-top: 15px;">
+                    <p><i data-feather="check-square"></i><b style="font-size: 16px; padding-left: 15px;">{{ msg }}</b>
+                    </p>
+                    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+<!--                    <div class="card-header pb-0">-->
+<!--                        <h5 style="text-transform: none;">Qo'shish</h5>-->
+<!--                    </div>-->
+                    <form action="{% url 'profiles:accept_application' %}" method="post" class="form theme-form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">O'quv kursi</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="loc_category_id" id="selectLocCategory" required>
+                                                <option selected value="{{loc_category.id}}">{{ loc_category.name }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Xodimning F.I.SH.</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="employee_id" id="selectEmployee" required>
+                                                <option selected value="{{employee.id}}">{{ employee.fullname }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Passport</label>
+                                        <div class="col-sm-9">
+                                            {% if employee.passport_pdf %}
+                                            <a href="/profiles/document/show/?doc_type=passport&employee_id={{employee.id}}" target="_blank">
+                                                <img src="{% static 'assets/images/pdf_ico.png' %}" style="width: 40px;"> Ochish
+                                            </a>
+                                            <a href="/profiles/document/delete/?doc_type=passport&employee_id={{employee.id}}" style="color:red; padding-left: 20px;">O'chirish</a>
+                                            {% else %}
+                                                <input class="form-control" type="file" name="passport" accept="application/pdf" required>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Mehnat daftarcha</label>
+                                        <div class="col-sm-9">
+                                            {% if employee.work_record_pdf %}
+                                            <a href="/profiles/document/show/?doc_type=work_record&employee_id={{employee.id}}" target="_blank">
+                                                <img src="{% static 'assets/images/pdf_ico.png' %}" style="width: 40px;"> Ochish
+                                            </a>
+                                            <a href="/profiles/document/delete/?doc_type=work_record&employee_id={{employee.id}}" style="color:red; padding-left: 20px;">O'chirish</a>
+                                            {% else %}
+                                                <input class="form-control" type="file" name="work_record" accept="application/pdf" required>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Tibbiy ko'rik karta</label>
+                                        <div class="col-sm-9">
+                                            {% if employee.med_card_pdf %}
+                                            <a href="/profiles/document/show/?doc_type=med_card&employee_id={{employee.id}}" target="_blank">
+                                                <img src="{% static 'assets/images/pdf_ico.png' %}" style="width: 40px;"> Ochish
+                                            </a>
+                                            <a href="/profiles/document/delete/?doc_type=med_card&employee_id={{employee.id}}" style="color:red; padding-left: 20px;">O'chirish</a>
+                                            {% else %}
+                                                <input class="form-control" type="file" name="med_card" accept="application/pdf" required>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label" style="width: 200px;">Tavsiyanoma</label>
+                                        <div class="col-sm-9">
+                                            {% if employee.recommendation_pdf %}
+                                            <a href="/profiles/document/show/?doc_type=recommendation&employee_id={{employee.id}}" target="_blank">
+                                                <img src="{% static 'assets/images/pdf_ico.png' %}" style="width: 40px;"> Ochish
+                                            </a>
+                                            <a href="/profiles/document/delete/?doc_type=recommendation&employee_id={{employee.id}}" style="color:red; padding-left: 20px;">O'chirish</a>
+                                            {% else %}
+                                                <input class="form-control" type="file" name="recommendation" accept="application/pdf" required>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="col-sm-9 offset-sm-3" style="margin-left: 0;">
+                                <button class="btn btn-primary" type="submit">Saqlash</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid Ends-->
+</div>
+{% endblock %}

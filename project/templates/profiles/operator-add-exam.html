@@ -1,0 +1,85 @@
+{% extends 'profiles/operator-base.html' %}
+
+{% block body %}
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-6 mb-3">
+                    <h3 style="text-transform: none;">IMTIHON QO'SHISH</h3>
+
+                    <!--                    <ol class="breadcrumb">-->
+                    <!--                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>-->
+                    <!--                        <li class="breadcrumb-item">Forms</li>-->
+                    <!--                        <li class="breadcrumb-item">Form Controls</li>-->
+                    <!--                        <li class="breadcrumb-item active">Base Inputs</li>-->
+                    <!--                    </ol>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h5 style="text-transform: none;">Yangi Imtihon qo'shish</h5>
+                    </div>
+                    <form action="{% url 'profiles:operator_add_exam' %}" method="post" class="form theme-form">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Kategoriya</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="category_id" required>
+                                                {% for category in categories %}
+                                                <option value="{{category.id}}">{{ category.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Xodimlarni tanlang (Ctrl+)</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" name="profile_ids" multiple="" required>
+                                                {% for profile in profiles %}
+                                                    <option value="{{profile.id}}">{{ profile.fullname }}</option>
+                                                {% empty %}
+                                                    <option value="">Mavjud emas</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Savollar soni</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="number" value="10" max="50" min="5" name="question_limit" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-3 col-form-label">Vaqt limiti (daqiqa)</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="number" value="20" min="1" max="100" name="time_limit" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="col-sm-9 offset-sm-3"  style="margin-left: 0;">
+                                <button class="btn btn-primary" type="submit">Saqlash</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid Ends-->
+</div>
+{% endblock %}
