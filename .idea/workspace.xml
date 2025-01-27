@@ -5,17 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd11cdc8-4f8f-4211-9bd6-6e3e99378514" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/s-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/s-test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/media/images/dash1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/templates/profiles/operator/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/project/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/imagefile.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/files/img.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/exams/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/exams/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/exams/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/exams/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/profiles/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/profiles/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/profiles/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/staticfiles/assets/js/dashboard/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/staticfiles/assets/js/dashboard/default.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/staticfiles/assets/js/notify/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/staticfiles/assets/js/notify/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/exams/base-exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/exams/base-exam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/employee-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/worker/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/employee-exams.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/worker/exams.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/kadr/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/kadr/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/login-employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/worker/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/templates/profiles/operator-add-exam.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/operator-add-exam.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/operator-base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/operator-base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/operator-dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/operator-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/operator-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/templates/profiles/operator-tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/templates/profiles/operator-tests.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,22 +55,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/www/Desktop/railexam.uz&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.models.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/www/Desktop/railexam.uz",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\www\Desktop\railexam.uz\project\media\images" />
       <recent name="C:\Users\www\Desktop\s-test\project\files\documents" />
       <recent name="C:\Users\www\Desktop\s-test\project\templates\profiles\kadr" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\www\Desktop\railexam.uz\project\media\images" />
+      <recent name="C:\Users\www\Desktop\railexam.uz\project\templates\profiles\worker" />
       <recent name="C:\Users\www\Desktop\s-test\project\files\documents" />
       <recent name="C:\Users\www\Desktop\s-test\project" />
     </key>
@@ -85,7 +102,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/project/profiles/views.py</url>
-          <line>68</line>
+          <line>71</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

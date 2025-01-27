@@ -373,7 +373,7 @@ var charttimeline = new ApexCharts(document.querySelector("#chart-timeline-dashb
 charttimeline.render();
 // second chart dashbord dafault
 var options17 = {
-  series: [76, 67, 61, 90],
+  series: [100, 5, 61, 90],
   chart: {
       height: 380,
       type: 'radialBar',
@@ -400,7 +400,7 @@ var options17 = {
       }
   },
   colors: [vihoAdminConfig.primary, vihoAdminConfig.secondary, vihoAdminConfig.primary, vihoAdminConfig.secondary],
-  labels: ['Total order', 'Total product', 'Quantity', 'Page views'],
+  labels: ["Jami imtihonlar", 'Qoniqarsiz', 'Qoniqarli', "A'lo"],
   legend: {
       show: true,
       floating: true,

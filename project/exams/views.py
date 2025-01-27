@@ -1,4 +1,7 @@
 import os
+import subprocess
+import pypandoc
+
 from io import BytesIO
 from datetime import timedelta
 
@@ -81,7 +84,7 @@ def exam_result_pdf_view(request, unique_id):
         ).first()
         count_tests = exam.results.count()
         percent_correct = int(exam.count_corrects / count_tests * 100) if count_tests > 0 else 0
-        url = f"https://railexam.uz/load-result/{exam.unique_id}"
+        url = f"https://railexam.uz/exams/qr-result/{exam.unique_id}"
         qr = qrcode.QRCode(
             version=1,
             error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -120,13 +123,20 @@ def exam_result_pdf_view(request, unique_id):
         doc.save(word_path)
 
         # pythoncom.CoInitializeEx(0)
-        convert(word_path, pdf_path)
+        # convert(word_path, pdf_path)
 
-        exam.pdf_short_path = pdf_short_path
+        try:
+            pypandoc.convert_file(word_path, 'pdf', outputfile=pdf_path)
+            exam.pdf_short_path = pdf_short_path
+        except Exception as e:
+            with open(word_path, 'rb') as file:
+                response = HttpResponse(file.read(),
+                                        content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')
+                response['Content-Disposition'] = f'attachment; filename="{exam.employee.fullname} {os.path.basename(word_path)}"'
+                return response
         exam.save()
     else:
         pdf_path = os.path.join(settings.BASE_DIR, exam.pdf_short_path)
-
     try:
         with open(pdf_path, 'rb') as pdf_file:
             response = HttpResponse(pdf_file.read(), content_type='application/pdf')

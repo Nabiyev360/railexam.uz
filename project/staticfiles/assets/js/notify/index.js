@@ -1,12 +1,12 @@
 'use strict';
-var notify = $.notify('<i class="fa fa-bell-o"></i><strong>Loading</strong> page Do not close this page...', {
+var notify = $.notify('<i class="fa fa-bell-o"></i><strong>Ma\'lumotlar</strong> yuklanmoqda...', {
     type: 'theme',
     allow_dismiss: true,
-    delay: 2000,
+    delay: 1000,
     showProgressbar: true,
     timer: 300
 });
 
 setTimeout(function() {
-    notify.update('message', '<i class="fa fa-bell-o"></i><strong>Loading</strong> Inner Data.');
+    notify.update('message', '<i class="fa fa-bell-o"></i><strong>Ma\'lumotlar</strong> muvaffaqiyatli yuklandi!');
 }, 1000);

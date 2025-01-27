@@ -6,6 +6,7 @@ import string
 import face_recognition
 import requests as req
 from PIL import Image
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -23,11 +24,13 @@ from .models import Role, Profile, CourseCategory, Company, Application
 from .services import check_employee
 
 
+@method_decorator(login_required, name='dispatch')
 class DashboardView(View):
     def get(self, request):
         user_role = request.user.profile.role.name
-        if user_role in ['overseer', 'root']:
-            return render(request, 'profiles/operator-dashboard.html')
+        if user_role in ['overseer']:
+            return redirect('/profiles/operator/dashboard/')
+            # return render(request, 'profiles/operator-dashboard.html')
         elif user_role == 'employee':
             return redirect('/profiles/employee/')
         elif user_role == 'kadr':
@@ -226,7 +229,42 @@ def logout_view(request):
 # === OPERATOR ===
 @login_required
 def operator_main_view(request):
-    return redirect('/profiles/operator/exams')
+    total_exams = Exam.objects.count()
+    successful_exams = 0
+    failed_exams = 0
+    total_percentage = 0
+
+    exams = Exam.objects.annotate(
+        total_results=Count('results'),
+        correct_results=Count('results', filter=Q(results__option_result='correct'))
+    )
+
+    for exam in exams:
+        if exam.total_results > 0:
+            correct_percentage = (exam.correct_results / exam.total_results) * 100
+            total_percentage += correct_percentage
+            if correct_percentage > 55:
+                successful_exams += 1
+            else:
+                failed_exams += 1
+        else:
+            failed_exams += 1  # Exams with no results are considered failed
+
+    average_percentage = total_percentage / total_exams if total_exams > 0 else 0
+
+    last_five_exams = Exam.objects.filter(ended__isnull=False).order_by('-created')[:5]
+
+    context = {
+        "total_exams": total_exams,
+        "successful_exams": successful_exams,
+        "failed_exams": failed_exams,
+        "average_percentage": round(average_percentage, 2),
+        "successful_percent": round(successful_exams/total_exams*100),
+        "failed_percent": round(failed_exams/total_exams*100),
+        "last_five_exams": last_five_exams
+    }
+
+    return render(request, 'profiles/operator/dashboard.html', context)
 
 
 @login_required
@@ -318,7 +356,7 @@ def operator_tests_view(request):
 @method_decorator(csrf_exempt, name='dispatch')
 class LoginEmployeeView(View):
     def get(self, request):
-        return render(request, 'profiles/login-employee.html')
+        return render(request, 'profiles/worker/login.html')
 
     def post(self, request):
         pin = request.POST.get('pin')
@@ -492,8 +530,22 @@ def employee_exams_view(request):
     employee_active_exams = employee_exams.filter(ended__isnull=True)
     employee_ended_exams = employee_exams.filter(ended__isnull=False)
 
-    return render(request, 'profiles/employee-exams.html', {
+    return render(request, 'profiles/worker/exams.html', {
         "employee_all_exams": employee_exams,
         "employee_active_exams": employee_active_exams,
         "employee_ended_exams": employee_ended_exams,
     })
+
+
+@login_required
+def download_db_view(request):
+    db_path = os.path.join(settings.BASE_DIR, 'db.sqlite3')
+
+    if not os.path.exists(db_path):
+        raise Http404("Database file not found.")
+    elif not request.user.is_superuser:
+        return JsonResponse({"message": "not allowed"})
+
+    response = FileResponse(open(db_path, 'rb'), as_attachment=True)
+    response['Content-Disposition'] = 'attachment; filename="db.sqlite3"'
+    return response
