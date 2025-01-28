@@ -65,10 +65,15 @@ def end_exam_view(request, exam_id):
         exam.ended = timezone.now()
         exam.save()
 
-    exam_results = exam.results.all().order_by('id')
-    context = {"exam": exam, "exam_results": exam_results}
-    # return render(request, 'exams/emp-results-page.html', context=context)
-    return redirect(f'/exams/qr-result/{exam.unique_id}')
+    current_exam = Exam.objects.filter(id=exam.id).annotate(
+        count_all=Count('results'),
+        count_corrects=Count('results', filter=Q(results__option_result='correct')),
+        count_incorrect=Count('results', filter=Q(results__option_result='incorrect'))
+    ).first()
+
+    count_selected = current_exam.count_corrects + current_exam.count_incorrect
+
+    return render(request,'exams/result.html', {"current_exam": current_exam, 'count_selected': count_selected})
 
 
 @login_required

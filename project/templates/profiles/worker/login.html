@@ -57,6 +57,9 @@
             <div class="col-xl-7"><img class="bg-img-cover bg-center" src="{% static 'assets/images/login/3.jpg' %}"
                                        alt="looginpage"></div>
             <div class="col-xl-5 p-0">
+                <div class="login-card" style="min-height: 0; height: 0;">
+                    <img style="width: 300px; margin-top: 10%;" src="{% static 'assets/images/logo/otd-logo.png' %}">
+                </div>
                 <div class="login-card">
                     <form id="login-form" class="theme-form login-form" action="{% url 'profiles:login_employee' %}" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
@@ -105,7 +108,7 @@
 <!--                        </ul>-->
                         </div>
                         <br>
-                        <p><a class="ms-2" href="{% url 'profiles:login_operator' %}">Operator sifatida kirish</a></p>
+                        <p><a class="ms-2" href="{% url 'profiles:login_operator' %}">Ma'sul xodimlar uchun</a></p>
                     </form>
                 </div>
             </div>

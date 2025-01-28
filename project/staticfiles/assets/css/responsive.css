@@ -665,7 +665,7 @@
     margin-left: 10px; }
   .email-wrap .actions li .btn {
     padding: 7px 20px;
-    text-transform: capitalize; } }
+    text-transform: none; } }
 
 @media screen and (max-width: 1199px) {
   .ttl-info {

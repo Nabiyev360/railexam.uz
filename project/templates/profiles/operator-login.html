@@ -57,12 +57,17 @@
             <div class="col-xl-7"><img class="bg-img-cover bg-center" src="{% static 'assets/images/login/3.jpg' %}"
                                        alt="looginpage"></div>
             <div class="col-xl-5 p-0">
-                <div class="login-card">
+                <div class="login-card" style="min-height: 0; height: 0;">
+                    <img style="width: 300px; margin-top: 10%;" src="{% static 'assets/images/logo/otd-logo.png' %}">
+                </div>
+                <div class="login-card" style=" font-size: 12px; min-height: 20px; height: 20px; padding: 10%; padding-bottom: 0;">
+                    RAQAMLASHTIRISH KELAJAK LOKOMOTIVI
+                </div>
+                <div class="login-card" style="padding: 0 20; min-height: 86vh; height: 86vh;">
                     <form class="theme-form login-form" action="{% url 'profiles:login_operator' %}" method="POST">
                         {% csrf_token %}
                         <h4>Kirish</h4>
                         <h6>Login va parolingizni kiriting</h6>
-
                         {% if messages %}
                         <div style="color: red; text-align: center;">{{ messages|last_msg }}</div>
                         {% endif %}

@@ -1,4 +1,4 @@
-{% extends 'profiles/kadr/base.html' %}
+{% extends 'profiles/uel/base.html' %}
 {% load static %}
 {% block head %}
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -48,7 +48,7 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3>Imtihonga yuborilganlar ro'yxati</h3>
+                    <h3>Nomzodlar</h3>
                     <!--                    <ol class="breadcrumb">-->
                     <!--                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>-->
                     <!--                        <li class="breadcrumb-item">Pages</li>-->
@@ -137,25 +137,18 @@
                                             <td class="font-success"><b>Tayyor</b></td>
                                             <td>Taqdim etishga tayyor</td>
                                         {% elif application.status == 'under_review' %}
-                                            <td class="font-success"><b>Yuborilgan</b></td>
+                                            <td class="font-success"><b>Tekshiruvda</b></td>
                                             <td>Ko'rib chiqilmoqda</td>
                                         {% elif application.status == 'ready_to_exam' %}
                                             <td class="font-success"><b>Imtihonga ruxsat</b></td>
                                             <td>Imtihon topshirmagan</td>
                                         {% endif %}
                                         <td>
-                                            <a href="/profiles/kadr/check-documents/{{ application.profile.id }}">
+                                            <a href="{% url 'profiles:uel_student_docs' application.id %}">
                                                 <button class="btn btn-info btn-xs mb-3" type="button"
                                                     data-original-title="btn btn-danger btn-xs" title="">Hujjatlarni ko'rish
                                                 </button>
                                             </a>
-                                            {% if application.status == 'ready_to_send' %}
-                                            <a href="{% url 'profiles:send_to_uel' application.id %}">
-                                                <button class="btn btn-primary btn-xs mb-3" type="button"
-                                                    data-original-title="btn btn-danger btn-xs" title="">UELga yuborish
-                                                </button>
-                                            </a>
-                                            {% endif %}
                                         </td>
                                     </tr>
                                 {% endfor %}

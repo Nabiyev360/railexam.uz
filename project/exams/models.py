@@ -49,7 +49,6 @@ class Exam(models.Model):
     unique_id = models.CharField(max_length=255)
     pdf_short_path = models.CharField(max_length=255, blank=True, null=True)
 
-
     def __str__(self):
         return f"№ {self.id}"
 

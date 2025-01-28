@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+
 class Company(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
@@ -50,23 +51,23 @@ class Application(models.Model):
     status_choices = (
         ('docs_preparing', 'Hujjatlar tayyorlanmoqda'),
         ('ready_to_send', 'Taqdim qilishga tayyor'),
-        ('under_review', 'Yuborilgan'),
+        ('under_review', "Ko'rib chiqishga yuborilgan"),
+        ('ready_to_exam', 'Imtihonga ruxsat'),
+        ('confirmation', 'Tasdiqlashda'),
         ('approved', 'Tasdiqlangan'),
         ('returned', 'Qayta ishlashga yuborilgan'),
     )
 
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     curse_category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
-    status = models.CharField(max_length=255, choices=status_choices, default='docs_preparing')
+    status = models.CharField(max_length=255, choices=status_choices, default='ready_to_send')
 
     def __str__(self):
         return self.profile.fullname
 
     def save(self, *args, **kwargs):
         profile = self.profile
-        if all([profile.passport_pdf, profile.work_record_pdf, profile.med_card_pdf, profile.recommendation_pdf]):
-            self.status = 'ready_to_send'
-        else:
+        if not all([profile.passport_pdf, profile.work_record_pdf, profile.med_card_pdf, profile.recommendation_pdf]):
             self.status = 'docs_preparing'
         super().save(*args, **kwargs)
 

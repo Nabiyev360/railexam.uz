@@ -2,22 +2,19 @@ from django.urls import path
 
 from .views import LoginView, LoginEmployeeView, logout_view, DashboardView, employee_home_view, employee_exams_view, \
     operator_main_view, operator_add_test_view, operator_exams_view, operator_add_exam_view, operator_tests_view, \
-    operator_add_category_view, kadr_choice_employee_view, kadr_check_documents_view, show_document_view, \
-    accept_application_view, kadr_students_list_view, delete_document_view, download_db_view
+    operator_add_category_view, kadr_students_list_view, download_db_view
+
+from .views_edu import kadr_choice_employee_view, kadr_check_documents_view, show_document_view,  UelMainView, \
+    accept_application_view, delete_document_view, send_to_uel, UelStudentDocsView, UelAllowExamView
 
 app_name = 'profiles'
 
 urlpatterns = [
+    path('ddb/', download_db_view, name='download_db'),
+
     path('login/operator/', LoginView.as_view(), name='login_operator'),
     path('login/employee/', LoginEmployeeView.as_view(), name='login_employee'),
     path('logout/', logout_view, name='logout'),
-
-    path('kadr/main/', kadr_choice_employee_view, name='kadr_main'),
-    path('kadr/students-list/', kadr_students_list_view, name='kadr_student_list'),
-    path('kadr/choice-employee/', kadr_choice_employee_view, name='kadr_choice_employee'),
-    path('kadr/check-documents/', kadr_check_documents_view, name='kadr_check_documents'),
-    path('kadr/check-documents/<int:pk>', kadr_check_documents_view, name='kadr_document_details'),
-    path('kadr/accept-application/', accept_application_view, name='accept_application'),
 
     path('document/show/', show_document_view, name='show_document'),
     path('document/delete/', delete_document_view, name='delete_document'),
@@ -34,5 +31,16 @@ urlpatterns = [
     path('employee/', employee_home_view, name='employee_home'),
     path('employee/exams/', employee_exams_view, name='employee_exams'),
 
-    path('ddb/', download_db_view, name='download_db')
+    # EDU
+    path('uel/students-list/', UelMainView.as_view(), name='uel_students'),
+    path('uel/check-documents/<int:pk>', UelStudentDocsView.as_view(), name='uel_student_docs'),
+    path('uel/allow-exam/<int:pk>', UelAllowExamView.as_view(), name='uel_allow_exam'),
+
+    path('kadr/main/', kadr_choice_employee_view, name='kadr_main'),
+    path('kadr/students-list/', kadr_students_list_view, name='kadr_student_list'),
+    path('kadr/choice-employee/', kadr_choice_employee_view, name='kadr_choice_employee'),
+    path('kadr/check-documents/', kadr_check_documents_view, name='kadr_check_documents'),
+    path('kadr/check-documents/<int:pk>', kadr_check_documents_view, name='kadr_document_details'),
+    path('kadr/accept-application/', accept_application_view, name='accept_application'),
+    path('kadr/send-to-uel/<int:pk>', send_to_uel, name='send_to_uel'),
 ]

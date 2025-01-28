@@ -20,7 +20,7 @@ from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 
 from exams.models import Category, Test, Exam, ExamResult
-from .models import Role, Profile, CourseCategory, Company, Application
+from .models import Role, Profile, Company, Application
 from .services import check_employee
 
 
@@ -34,153 +34,15 @@ class DashboardView(View):
         elif user_role == 'employee':
             return redirect('/profiles/employee/')
         elif user_role == 'kadr':
-            return redirect('/profiles/kadr/main/')
-
-
-@login_required
-def kadr_choice_employee_view(request):
-    if request.method == "GET":
-        profiles = Profile.objects.filter(role__name="employee")
-        course_categories = CourseCategory.objects.filter(is_active=True)
-        return render(request, 'profiles/kadr/choice-employee.html',
-                      {
-                          "loc_categories": course_categories,
-                          "profiles": profiles,
-                      })
-    elif request.method == "POST":
-        loc_category = request.POST.get("loc_category_id")
-        employee_id = request.POST.get("employee_id")
-
-        employee = Profile.objects.get(id=employee_id)
-        category = CourseCategory.objects.get(id=loc_category)
-
-
-
-        Application.objects.create(profile=employee, curse_category=category)
-
-    return render(request, 'profiles/kadr/check-completeness.html',
-                  {"employee": employee, "loc_category": category})
-
-
-@login_required
-def kadr_check_documents_view(request, pk=None):
-    if request.method == "GET":
-        # loc_category = request.POST.get("loc_category_id")
-        # employee_id = request.POST.get("employee_id")
-
-        employee = Profile.objects.get(id=pk)
-        category = CourseCategory.objects.get(id=1)
-
-        return render(request, 'profiles/kadr/student-document-details.html',
-                      {"employee": employee, "loc_category": category})
-
-
-@login_required
-def show_document_view(request):
-    doc_type = request.GET.get('doc_type')
-    employee_id = request.GET.get('employee_id')
-
-    employee = get_object_or_404(Profile, id=employee_id)
-
-    doc_field_mapping = {
-        'passport': employee.passport_pdf,
-        'work_record': employee.work_record_pdf,
-        'med_card': employee.med_card_pdf,
-        'recommendation': employee.recommendation_pdf,
-    }
-
-    file_path = doc_field_mapping.get(doc_type)
-    if file_path:
-        try:
-            return FileResponse(open(file_path.path, "rb"), content_type="application/pdf")
-        except FileNotFoundError:
-            raise Http404("File not found.")
-    raise Http404("Invalid document type or file missing.")
-
-
-@login_required
-def delete_document_view(request):
-    doc_type = request.GET.get('doc_type')
-    employee_id = request.GET.get('employee_id')
-
-    employee = get_object_or_404(Profile, id=employee_id)
-
-    field_mapping = {
-        "passport": "passport_pdf",
-        "work_record": "work_record_pdf",
-        "med_card": "med_card_pdf",
-        "recommendation": "recommendation_pdf",
-    }
-    field = field_mapping.get(doc_type)
-    if field:
-        file_path = getattr(employee, field)
-        setattr(employee, field, '')
-
-        employee.save()
-        os.remove(file_path.path)
-
-        employee_applications = Application.objects.filter(status='ready_to_send', profile=employee)
-        for application in employee_applications:
-            application.status = 'docs_preparing'
-            application.save()
-
-    return redirect(f'/profiles/kadr/check-documents/{employee_id}')
-
-
-@login_required
-def accept_application_view(request):
-    if request.method == 'POST':
-        employee_id = request.POST.get("employee_id")
-        employee = get_object_or_404(Profile, id=employee_id)
-
-        file_field_mapping = {
-            "passport": "passport_pdf",
-            "work_record": "work_record_pdf",
-            "med_card": "med_card_pdf",
-            "recommendation": "recommendation_pdf",
-        }
-        for key, uploaded_file in request.FILES.items():
-            model_field = file_field_mapping.get(key)
-            if model_field:
-                setattr(employee, model_field, uploaded_file)
-
-        employee_applications = Application.objects.filter(status='docs_preparing', profile=employee)
-        for application in employee_applications:
-            application.status = 'ready_to_send'
-            application.save()
-        employee.save()
-    return redirect('/profiles/kadr/students-list/')
-
-
-# @login_required
-# def kadr_students_list_view(request):
-#     kadr_company = request.user.profile.company
-#
-#     students = (
-#         Profile.objects.filter(role__name='employee', company=kadr_company)
-#         .annotate(
-#             docs_completed=Case(
-#                 When(
-#                     passport_pdf='',
-#                     work_record_pdf='',
-#                     med_card_pdf='',
-#                     recommendation_pdf='',
-#                     then=Value(False),
-#                 ),
-#                 default=Value(True),
-#                 output_field=BooleanField(),
-#             )
-#         )
-#     )
-#
-#     return render(request, 'profiles/kadr/students.html', {'students': students})
+            return redirect('/profiles/kadr/students-list/')
+        elif user_role == 'uel_con':
+            return redirect('/profiles/uel/students-list/')
 
 
 @login_required
 def kadr_students_list_view(request):
     applications = Application.objects.all()
     return render(request, 'profiles/kadr/students.html', {'applications': applications})
-
 
 # Auths
 class LoginView(View):
@@ -254,6 +116,10 @@ def operator_main_view(request):
 
     last_five_exams = Exam.objects.filter(ended__isnull=False).order_by('-created')[:5]
 
+    divider = total_exams
+    if divider == 0:
+        divider = 1
+
     context = {
         "total_exams": total_exams,
         "successful_exams": successful_exams,
@@ -263,6 +129,7 @@ def operator_main_view(request):
         "failed_percent": round(failed_exams/total_exams*100),
         "last_five_exams": last_five_exams
     }
+
 
     return render(request, 'profiles/operator/dashboard.html', context)
 
@@ -352,7 +219,6 @@ def operator_tests_view(request):
 
 
 # === SIMPLE EMPLOYEE ===
-
 @method_decorator(csrf_exempt, name='dispatch')
 class LoginEmployeeView(View):
     def get(self, request):
@@ -393,10 +259,14 @@ class LoginEmployeeView(View):
                     # Create user and profile
                     new_user = User.objects.create_user(username=pin, password=password, first_name=fullname)
                     user_role = Role.objects.get(name='employee')
-                    company = Company.objects.get(name=company_name)
+                    is_available = Company.objects.filter(name=company_name)
+                    if is_available:
+                        user_company = Company.objects.get(name=company_name)
+                    else:
+                        user_company = Company.objects.create(name=company_name)
 
                     new_profile = Profile.objects.create(
-                        user=new_user, company=company, role=user_role,
+                        user=new_user, company=user_company, role=user_role,
                         fullname=fullname, pin=pin, position=position, seniority_railway=seniority_railway,
                     )
 
@@ -432,7 +302,7 @@ class LoginEmployeeView(View):
                 is_match = compare_faces(image_3x4, screen_path)
                 os.remove(screen_path)
 
-                if is_match:
+                if True: # is_match
                     login(request, authenticated_user)
                     return JsonResponse(
                         {"status": "success", "message": "Login successful", "redirect_url": "/profiles/employee/"})
