@@ -134,6 +134,7 @@ def exam_result_pdf_view(request, unique_id):
             pypandoc.convert_file(word_path, 'pdf', outputfile=pdf_path)
             exam.pdf_short_path = pdf_short_path
         except Exception as e:
+            print(e)
             with open(word_path, 'rb') as file:
                 response = HttpResponse(file.read(),
                                         content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document')

@@ -302,7 +302,7 @@ class LoginEmployeeView(View):
                 is_match = compare_faces(image_3x4, screen_path)
                 os.remove(screen_path)
 
-                if True: # is_match
+                if is_match: # is_match
                     login(request, authenticated_user)
                     return JsonResponse(
                         {"status": "success", "message": "Login successful", "redirect_url": "/profiles/employee/"})
