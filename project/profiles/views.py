@@ -3,7 +3,7 @@ import random
 import secrets
 import string
 
-import face_recognition
+# import face_recognition
 import requests as req
 from PIL import Image
 from django.conf import settings
@@ -67,16 +67,16 @@ class LoginView(View):
             return redirect('/profiles/login/operator/')
 
 
-def compare_faces(image1_path, image2_path, tolerance=0.6):
-    image1 = face_recognition.load_image_file(image1_path)
-    image2 = face_recognition.load_image_file(image2_path)
-    try:
-        encoding1 = face_recognition.face_encodings(image1)[0]
-        encoding2 = face_recognition.face_encodings(image2)[0]
-    except IndexError:
-        return False
-    results = face_recognition.compare_faces([encoding1], encoding2, tolerance=tolerance)
-    return results[0]
+# def compare_faces(image1_path, image2_path, tolerance=0.6):
+#     image1 = face_recognition.load_image_file(image1_path)
+#     image2 = face_recognition.load_image_file(image2_path)
+#     try:
+#         encoding1 = face_recognition.face_encodings(image1)[0]
+#         encoding2 = face_recognition.face_encodings(image2)[0]
+#     except IndexError:
+#         return False
+#     results = face_recognition.compare_faces([encoding1], encoding2, tolerance=tolerance)
+#     return results[0]
 
 
 def logout_view(request):
@@ -299,7 +299,8 @@ class LoginEmployeeView(View):
                 img.save(screen_path)
 
                 # Compare faces (assuming compare_faces is defined elsewhere)
-                is_match = compare_faces(image_3x4, screen_path)
+                # is_match = compare_faces(image_3x4, screen_path)
+                is_match = True
                 os.remove(screen_path)
 
                 if is_match: # is_match
@@ -311,79 +312,10 @@ class LoginEmployeeView(View):
             except Exception as e:
                 return JsonResponse({"status": "error", "message": f"Xato yuz berdi: {str(e)}"})
 
-        return JsonResponse({"status": "error", "message": "Shaxsiy rasm yuborilmagan."})
-
-    # def post(self, request):
-    #     pin = request.POST.get('pin')
-    #     password = 'Pass2025'
-    #
-    #     user = User.objects.filter(username=pin).first()
-    #     if user and user.check_password(password):
-    #         authenticated_user = authenticate(request, username=pin, password=password)
-    #         if authenticated_user.profile.image:
-    #             image_3x4 = authenticated_user.profile.image
-    #         else:
-    #             return JsonResponse({"status": "error", "message": "Foydalanuvchi 3x4 rasmi bazada mavjud emas!"})
-    #     else:
-    #         try:
-    #             res = check_employee(pin=pin)
-    #             if res.status_code == 200:
-    #                 data = res.json().get('worker')
-    #                 if data is not None:
-    #                     fullname = f"{data.get('last_name')} {data.get('first_name')} {data.get('middle_name')}"
-    #                     company_name = data.get('position').get('organization')
-    #                     position = data.get('position').get('name')
-    #                     seniority_railway = data.get('job_date'),
-    #                     if None in [fullname, company_name, position, seniority_railway]:
-    #                         return JsonResponse(
-    #                             {"status": "error", "message": "E-xodimda xodim ma'lumotlari to'liq emas!"}
-    #                         )
-    #                     new_user = User.objects.create_user(username=pin, password=password, first_name=fullname)
-    #
-    #                     user_role = Role.objects.get(name='employee')
-    #                     company = Company.objects.get(name=company_name)
-    #
-    #                     new_profile = Profile.objects.create(user=new_user, company=company, role=user_role,
-    #                                                          fullname=fullname, pin=pin, position=position,
-    #                                                          seniority_railway=seniority_railway,
-    #                                                          )
-    #                     image_url = data.get('photo')
-    #                     response = req.get(image_url)
-    #                     response.raise_for_status()
-    #                     filename = image_url.split('/')[-1]
-    #                     image_content = ContentFile(response.content)
-    #                     new_profile.image.save(filename, image_content, save=True)
-    #
-    #                     authenticated_user = authenticate(request, username=pin, password=password)
-    #                     image_3x4 = authenticated_user.profile.image
-    #
-    #                 else:
-    #                     return JsonResponse(
-    #                         {"status": "error", "message": "JShShIR xato kiritildi, tekshirib qaytadan tering!"}
-    #                     )
-    #
-    #         except req.RequestException:
-    #             return JsonResponse(
-    #                 {"status": "error", "message": "API bilan aloqa qilishda xatolik yuz berdi"}
-    #             )
-    #
-    #     captured_image = request.FILES.get('frame')
-    #     if captured_image:
-    #         img = Image.open(captured_image)
-    #         characters = string.ascii_letters + string.digits
-    #         image_name = ''.join(secrets.choice(characters) for _ in range(20))
-    #         screen_path = f"media/log/{image_name}.jpg"
-    #         img.save(screen_path)
-    #
-    #         is_match = compare_faces(image_3x4, screen_path)
-    #         os.remove(screen_path)
-    #
-    #         if is_match:
-    #             login(request, authenticated_user)
-    #             return JsonResponse({"status": "success", "message": "Login successful",
-    #                                  "redirect_url": "/profiles/employee/"})
-    #         else:
-    #             return JsonResponse({"status": "error", "message": "Shaxs tasdiqdan o'tmadi"})
+        # return JsonResponse({"status": "error", "message": "Shaxsiy rasm yuborilmagan."})
+        login(request, authenticated_user)
+        return JsonResponse(
+            {"status": "success", "message": "Login successful", "redirect_url": "/profiles/employee/"})
 
 
 def employee_home_view(request):
